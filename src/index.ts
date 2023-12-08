@@ -1,4 +1,3 @@
-import { log } from "console";
 import cors from "cors";
 import { config } from "dotenv";
 import express from "express";
