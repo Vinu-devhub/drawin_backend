@@ -17,13 +17,13 @@ app.use(cors());
 
 const io = new Server<ClientToServerEvents, ServerToClientEvents>(server, {
   cors: {
-    origin: "http://localhost:5173",
-    // credentials: true,
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    // Add other configurations if needed
   },
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello World! from backend");
+  res.send("Hello World! from Drawin Backend");
 });
 
 io.on("connection", (socket) => {
